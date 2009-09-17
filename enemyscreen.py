@@ -25,12 +25,18 @@ class EnemyScreen(layermanager.Layer):
     def Update(self):
         pos = pygame.mouse.get_pos()
         
-        if self.rect.x < pos[0]:
-            self.rect.x += self.speed
-            #self.rect.y += self.speed/3
-        elif self.rect.x > pos[0]:
-            self.rect.x -= self.speed
-            #self.rect.y -= self.speed/3
+        if self.rect.centerx < pos[0]:
+            if pos[0] - self.rect.centerx < self.speed:
+                self.rect.centerx += pos[0] - self.rect.centerx
+            else:
+                self.rect.centerx += self.speed
+                #self.rect.y += self.speed/3
+        elif self.rect.centerx > pos[0]:
+            if self.rect.centerx - pos[0] < self.speed:
+                self.rect.centerx -= self.rect.centerx - pos[0]
+            else:
+                self.rect.centerx -= self.speed
+                #self.rect.y -= self.speed/3
         else:
             print 'pew pew'
             
