@@ -4,6 +4,7 @@ import splashscreen
 import layermanager
 import sys
 import background
+import enemyscreen
 
 from pygame.locals import *
 
