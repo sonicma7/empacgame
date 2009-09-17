@@ -3,6 +3,7 @@ import config
 import splashscreen
 import layermanager
 import sys
+import background
 
 from pygame.locals import *
 
@@ -16,6 +17,7 @@ masterclock = pygame.time.Clock()
 mainmenu = splashscreen.SplashScreen(screen)
 manager = layermanager.LayerManager()
 manager.layerStack.append(mainmenu)
+manager.layerStack.append(background.Background(screen))
 
 while True:
     masterclock.tick(60)

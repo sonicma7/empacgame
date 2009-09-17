@@ -26,6 +26,8 @@ class SplashScreen(layermanager.Layer):
 
         self.startRect = pygame.Rect(self.startText.get_rect())
         self.startRect.topleft = self.startPosition
+
+        self.backRect = pygame.Rect(60,485,180,95)
         
         self.instructionRect = pygame.Rect(self.instructionText.get_rect())
         self.instructionRect.topleft = self.instructionPosition
@@ -48,6 +50,25 @@ class SplashScreen(layermanager.Layer):
                     self.currentscreen = 1 #Go to instructions screen...etc
                 else:
                     self.gameRunning = True
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                pos = pygame.mouse.get_pos()
+                if self.startRect.collidepoint(pos):
+                    self.gameRunning = True
+                if self.instructionRect.collidepoint(pos):
+                    self.selected = 1
+                    self.currentscreen = 1
+
+        if self.currentscreen == 1:
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:  
+                self.currentscreen = 0    
+                self.selected = 0 
+            
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                pos = pygame.mouse.get_pos()
+                if self.backRect.collidepoint(pos):
+                    self.currentscreen = 0
+                    self.selected = 0  
             
 
     def Update(self):    
@@ -86,6 +107,12 @@ class SplashScreen(layermanager.Layer):
  
             screen.blit(startText, (60,170))
             screen.blit(instructionText, (60,270))
+
+        if self.currentscreen == 1:
+            backText = self.font.render("Back", 1, (0, 161, 236))
+            screen.blit(backText,self.backRect)
+
+ 
             
 
 def main():
