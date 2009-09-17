@@ -1,6 +1,7 @@
 import layermanager
 import pygame
 import window
+import enemy
 
 class Background(layermanager.Layer):
     def __init__(self,screen):
@@ -12,28 +13,38 @@ class Background(layermanager.Layer):
         self.grass = pygame.image.load("art/grass.png")
         self.grassRect = self.grass.get_rect()
         self.sublist = []
+        self.enemies = []
         self.setupWindows()
-        self.windowGrid = [[1,1,1,1,1,1,1,1] #Can move onto 1's can't move to 0's
-                           [1,1,1,1,1,1,1,1]
-                           [1,1,1,1,1,1,1,1]
-                           [1,1,1,1,1,1,1,1]
-                           [0,1,1,1,1,1,1,1]
-                           [0,0,0,1,1,1,1,1]
-                           [0,0,0,0,0,1,1,1]
-                           [0,0,0,0,0,0,0,1]
+        self.setupEnemies()
+        self.windowGrid = [[1,1,1,1,1,1,1,1], #Can move onto 1's can't move to 0's
+                           [1,1,1,1,1,1,1,1],
+                           [1,1,1,1,1,1,1,1],
+                           [1,1,1,1,1,1,1,1],
+                           [0,1,1,1,1,1,1,1],
+                           [0,0,0,1,1,1,1,1],
+                           [0,0,0,0,0,1,1,1],
+                           [0,0,0,0,0,0,0,1]]
  
 
     def setupWindows(self):
         for i in range(8):
             for j in range(8):
                 self.sublist.append(window.Window((3+(i*127),60+(j*79))))
+    
+    def setupEnemies(self):
+        #Test enemy, most enemies wont be added until later in the level
+        self.enemies.append(enemy.Enemy())
 
     def HandleEvent(self, event):
         for i in self.sublist:
             i.HandleEvent(event)
+        for i in self.enemies:
+            i.HandleEvent(event)
 
     def Update(self):
         for i in self.sublist:
+            i.Update()
+        for i in self.enemies:
             i.Update()
 
     def Render(self, screen):   
@@ -42,3 +53,5 @@ class Background(layermanager.Layer):
         for i in self.sublist:
             i.Render(screen)
         screen.blit(self.grass,self.grassRect)
+        for i in self.enemies:
+            i.Render(screen)
