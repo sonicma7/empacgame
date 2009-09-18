@@ -2,16 +2,18 @@ import pygame
 import sys 
 import math
 import layermanager
+import player
 
 from pygame.locals import *
 
 class Enemy():
-    def __init__(self):
+    def __init__(self, background):
         self.gameRunning = False
         self.image = pygame.image.load('art/testenemy.png').convert_alpha()
         self.rect = self.image.get_rect()
-        self.rect.center = (500,600)
+        self.rect.center = (500,625)
         self.speed = 3.0
+        self.background = background
         
         
     def HandleEvent(self, event):
@@ -22,22 +24,22 @@ class Enemy():
             self.speed += 1
     
     def Update(self):
-        pos = pygame.mouse.get_pos()
+        pos = self.background.player.positionOffset[0]+(127*self.background.player.window[0])
         
-        if self.rect.centerx < pos[0]:
-            if pos[0] - self.rect.centerx < self.speed:
-                self.rect.centery += (pos[0] - self.rect.centerx)/3.0
-                self.rect.centerx += pos[0] - self.rect.centerx
+        if self.rect.centerx < pos:
+            if pos - self.rect.centerx < self.speed:
+                self.rect.centery += (pos - self.rect.centerx)/3.0
+                self.rect.centerx += pos - self.rect.centerx
             else:
                 self.rect.centerx += self.speed
-                self.rect.y += self.speed/3.0
-        elif self.rect.centerx > pos[0]:
-            if self.rect.centerx - pos[0] < self.speed:
-                self.rect.centery -= (self.rect.centerx - pos[0])/3.0
-                self.rect.centerx -= self.rect.centerx - pos[0]
+                self.rect.centery += self.speed/3.0
+        elif self.rect.centerx > pos:
+            if self.rect.centerx - pos < self.speed:
+                self.rect.centery -= (self.rect.centerx - pos)/3.0
+                self.rect.centerx -= self.rect.centerx - pos
             else:
                 self.rect.centerx -= self.speed
-                self.rect.y -= self.speed/3.0
+                self.rect.centery -= self.speed/3.0
         else:
             print 'pew pew'
             

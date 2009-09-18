@@ -60,16 +60,16 @@ class Player():
 
             if self.pressed["space"]:
                 if self.pressed["d"] and self.pressed["space"]:
-                    if self.window[0] < 7 and self.background.windowGrid[self.window[0]+2][self.window[1]].health > 0:
+                    if self.window[0] < 6 and self.background.windowGrid[self.window[0]+2][self.window[1]].health > 0:
                         self.window[0]+=2
                 if self.pressed["a"] and self.pressed["space"]:
-                    if self.window[0] > 0 and self.background.windowGrid[self.window[0]-2][self.window[1]].health > 0:
+                    if self.window[0] > 1 and self.background.windowGrid[self.window[0]-2][self.window[1]].health > 0:
                         self.window[0]-=2
                 if self.pressed["w"] and self.pressed["space"]:
-                    if self.window[1] > 0 and self.background.windowGrid[self.window[0]][self.window[1]-2].health > 0:
+                    if self.window[1] > 1 and self.background.windowGrid[self.window[0]][self.window[1]-2].health > 0:
                         self.window[1]-=2
                 if self.pressed["s"] and self.pressed["space"]:
-                    if self.window[1] < 7 and self.background.windowGrid[self.window[0]][self.window[1]+2].health > 0:
+                    if self.window[1] < 6 and self.background.windowGrid[self.window[0]][self.window[1]+2].health > 0:
                         self.window[1]+=2
             else:
                 if self.pressed["d"]:
