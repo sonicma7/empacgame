@@ -36,6 +36,7 @@ class SplashScreen(layermanager.Layer):
         #dont handle if not on splashscreen
         if self.gameRunning:
             return False
+
         
         if self.currentscreen == 0:
             if event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN:
@@ -46,10 +47,10 @@ class SplashScreen(layermanager.Layer):
             #begin Game
             if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
                 if self.selected == 0:
+                    self.gameRunning = True
+                else:
                     self.selected = 1
                     self.currentscreen = 1 #Go to instructions screen...etc
-                else:
-                    self.gameRunning = True
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pos = pygame.mouse.get_pos()
