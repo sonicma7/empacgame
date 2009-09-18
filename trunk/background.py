@@ -25,6 +25,7 @@ class Background(layermanager.Layer):
                             [1,1,1,1,1,1,1,1]]
         self.windowGrid = []
         self.enemies = []
+        self.balloons = []
         self.setupWindows()
         self.player = player.Player(self)
         self.sublist.append(self.player)
@@ -43,7 +44,8 @@ class Background(layermanager.Layer):
     
     def setupEnemies(self):
         #Test enemy, most enemies wont be added until later in the level
-        self.enemies.append(enemy.Enemy(self))
+        self.enemies.append(enemy.Enemy(self, 0))
+        self.enemies.append(enemy.Enemy(self, 1))
 
     def HandleEvent(self, event):
         for i in self.sublist:
@@ -56,6 +58,10 @@ class Background(layermanager.Layer):
             i.Update()
         for i in self.enemies:
             i.Update()
+        for i in self.balloons:
+            j = i.Update()
+            if j == True:
+                self.balloons.remove(i)
 
     def Render(self, screen):   
         screen.blit(self.background,self.backgroundRect)
@@ -64,4 +70,6 @@ class Background(layermanager.Layer):
             i.Render(screen)
         screen.blit(self.grass,self.grassRect)
         for i in self.enemies:
+            i.Render(screen)
+        for i in self.balloons:
             i.Render(screen)
