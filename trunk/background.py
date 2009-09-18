@@ -43,7 +43,7 @@ class Background(layermanager.Layer):
     
     def setupEnemies(self):
         #Test enemy, most enemies wont be added until later in the level
-        self.enemies.append(enemy.Enemy())
+        self.enemies.append(enemy.Enemy(self))
 
     def HandleEvent(self, event):
         for i in self.sublist:
