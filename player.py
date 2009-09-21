@@ -3,14 +3,14 @@ import pygame
 from pygame.locals import *
 
 class Player():
-    def __init__(self,background):
+    def __init__(self,background,position):
         self.player = pygame.image.load("art/player.png")
         self.playerRect = self.player.get_rect()
         self.attack = pygame.image.load("art/attack.png").convert_alpha()
         self.attackRect = self.attack.get_rect()
         self.background = background
         self.positionOffset = [53,72]
-        self.window = [0,0] 
+        self.window = position
         self.pressed = {"d":0,"a":0,"w":0,"s":0,"space":0}
         self.moveRight = True
         self.moveleft = False

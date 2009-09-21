@@ -3,6 +3,8 @@ import pygame
 import window
 import player
 import enemy
+import config
+import random
 
 
 class Background(layermanager.Layer):
@@ -14,6 +16,7 @@ class Background(layermanager.Layer):
         self.skyRect = self.sky.get_rect()
         self.grass = pygame.image.load("art/grass.png")
         self.grassRect = self.grass.get_rect()
+        self.font = pygame.font.Font(pygame.font.match_font("Verdana"), 40)
         self.sublist = []
         self.windowHealth = [[1,1,1,1,0,0,0,0], #Can move onto 1's can't move to 0's
                             [1,1,1,1,1,0,0,0], #Rotated so x,y coordinates are correct
@@ -27,7 +30,7 @@ class Background(layermanager.Layer):
         self.enemies = []
         self.balloons = []
         self.setupWindows()
-        self.player = player.Player(self)
+        self.player = player.Player(self,[random.randrange(7),random.randrange(4)])
         self.sublist.append(self.player)
         self.setupEnemies() 
         self.gameRunning = True
@@ -69,15 +72,19 @@ class Background(layermanager.Layer):
             if j == True:
                 self.balloons.remove(i)
 
-    def Render(self, screen):   
-        if self.gameRunning == False:
-            return True
+    def Render(self, screen):          
         screen.blit(self.background,self.backgroundRect)
         screen.blit(self.sky,self.skyRect)
         for i in self.sublist:
             i.Render(screen)
-        screen.blit(self.grass,self.grassRect)
+        screen.blit(self.grass,self.grassRect) 
+        if self.gameRunning == False:
+            return True
         for i in self.enemies:
             i.Render(screen)
         for i in self.balloons:
             i.Render(screen)
+        scoreText = self.font.render(str(config.score), 1, (0, 0, 0))
+        rect = scoreText.get_rect()
+        rect.center = (100,700)
+        screen.blit(scoreText, rect)
