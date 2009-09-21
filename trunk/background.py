@@ -30,6 +30,7 @@ class Background(layermanager.Layer):
         self.player = player.Player(self)
         self.sublist.append(self.player)
         self.setupEnemies() 
+        self.gameRunning = True
 
     def setupWindows(self):    
         for i in range(8):
@@ -48,14 +49,19 @@ class Background(layermanager.Layer):
         self.enemies.append(enemy.Enemy(self, 1))
 
     def HandleEvent(self, event):
+        if self.gameRunning == False:
+            return True
         for i in self.sublist:
             i.HandleEvent(event)
         for i in self.enemies:
             i.HandleEvent(event)
 
     def Update(self):
+        if self.gameRunning == False:
+            return True
         for i in self.sublist:
-            i.Update()
+            if i.Update() == False:
+                self.gameRunning = False
         for i in self.enemies:
             i.Update()
         for i in self.balloons:
@@ -64,6 +70,8 @@ class Background(layermanager.Layer):
                 self.balloons.remove(i)
 
     def Render(self, screen):   
+        if self.gameRunning == False:
+            return True
         screen.blit(self.background,self.backgroundRect)
         screen.blit(self.sky,self.skyRect)
         for i in self.sublist:

@@ -5,10 +5,18 @@ class Window():
         self.window = pygame.image.load("art/window.png")
         self.windowRect = self.window.get_rect()
         self.brokenWindow = pygame.image.load("art/brokenwindow.png")
+        self.windowHit = pygame.image.load("art/attack.png").convert_alpha()
+        self.attack = False
+        self.hitCounter = 0
         self.altwindow  = pygame.image.load("art/player.png")
         self.brokenWindowRect = self.brokenWindow.get_rect()
         self.health = health
         self.position = position
+
+    def attackWindow(self):
+        self.health -= 1
+        self.attack = True
+        self.hitCounter = 0
 
     def HandleEvent(self, event):
         pass
@@ -23,3 +31,8 @@ class Window():
 
     def Render(self, screen):   
         screen.blit(self.drawWindow,self.position)
+        if self.attack == True:
+            screen.blit(self.windowHit,(self.position[0]+45,self.position[1]+20))
+            self.hitCounter += 1
+            if self.hitCounter == 4:
+                self.attack = False

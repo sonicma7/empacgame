@@ -4,6 +4,7 @@ import splashscreen
 import layermanager
 import sys
 import background
+import endscreen
 
 from pygame.locals import *
 
@@ -14,10 +15,10 @@ screen = pygame.display.set_mode(config.screensize)#, pygame.FULLSCREEN)
 pygame.display.set_caption(config.title)
 masterclock = pygame.time.Clock()
 
-mainmenu = splashscreen.SplashScreen(screen)
 manager = layermanager.LayerManager()
-manager.layerStack.append(mainmenu)
+manager.layerStack.append(splashscreen.SplashScreen(screen))
 manager.layerStack.append(background.Background(screen))
+manager.layerStack.append(endscreen.endScreen(screen))
 
 while True:
     masterclock.tick(60)
