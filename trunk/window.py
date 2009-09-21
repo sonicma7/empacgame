@@ -1,4 +1,5 @@
 import pygame
+import config
 
 class Window():
     def __init__(self,position,health):
@@ -17,6 +18,8 @@ class Window():
         self.health -= 1
         self.attack = True
         self.hitCounter = 0
+        if self.health == 0:
+            config.score += config.glassValue
 
     def HandleEvent(self, event):
         pass
