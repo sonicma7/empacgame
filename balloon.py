@@ -6,7 +6,7 @@ import player
 
 from pygame.locals import *
 
-class Balloon():
+class Balloon(pygame.sprite.Sprite):
     def __init__(self, enemy):
         self.enemy = enemy
         if self.enemy.type == 0:
@@ -51,4 +51,4 @@ class Balloon():
         if self.enemy.type == 0:
             screen.blit(self.image, self.rect)
         elif self.enemy.type == 1:
-            screen.blit(self.image, (self.positionOffset[0]+(127*self.rooftop),self.height)) 
+            self.rect = screen.blit(self.image, (self.positionOffset[0]+(127*self.rooftop),self.height)) 

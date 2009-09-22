@@ -2,10 +2,11 @@ import pygame
 
 from pygame.locals import *
 
-class Player():
+class Player(pygame.sprite.Sprite):
     def __init__(self,background,position):
         self.player = pygame.image.load("art/player.png")
         self.playerRect = self.player.get_rect()
+        self.rect = self.playerRect
         self.attack = pygame.image.load("art/attack.png").convert_alpha()
         self.attackRect = self.attack.get_rect()
         self.background = background
@@ -136,5 +137,6 @@ class Player():
     
     def Render(self, screen):   
         self.playerRect = screen.blit(self.player,(self.positionOffset[0]+(127*self.window[0]),self.positionOffset[1]+(79*self.window[1])))
+        self.rect = self.playerRect
         
 
