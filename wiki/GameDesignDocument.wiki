@@ -2,7 +2,7 @@ G.l.a.s.s. B.r.e.a.k.e.r.
 
 Screen shot mockup – ALL Artist & Screenshot of Prototype
 
-I. Artist Statement/Philosophy/The WHY Factor (why create this game? why would someone want to play it?) - Mark
+I. Artist Statement/Philosophy/The WHY Factor (why create this game? why would someone want to play it?) - Ever feel frustrated with the new EMPAC building? Why not use the money you pay to go here on something useful? Well now you can take out your frustration on EMPAC in the game G.l.a.s.s. B.r.e.a.k.e.r. and break the windows of that annoying building.
 
 II. Predecessor or previous games/ distinctive factors in this genre - Ryan
 
@@ -10,7 +10,10 @@ III. Target Audience –The target audience is RPI students. Specifically any wh
 
 IV. Introduction & Story - Jeremy
 
-V. Immediate and long term projected socio/cultural project impact - Mark
+V. Immediate and long term projected socio/cultural project impact - The immediate impact the game will have on society is the visible dissatisfaction with the EMPAC complex.  Students will be able to show their dislike for the building by playing this game and the more they play it the more it will show they dislike EMPAC.
+
+Long term impact may be much more devastating to the actual EMPAC building.  Games sometimes give already disturbed people bad ideas and this may be the case.  A student who has been plotting some way to harm EMPAC may see this game as an inspiration.  On the other hand, if the game becomes popular among students, RPI administrators may ask for student input in future construction projects to avoid the backlash that they have faced.
+
 
 VI. Delivery System & Requirements - Jeremy
 
@@ -28,9 +31,24 @@ XII. Music/ Sound Design – The main sounds are suction cup popping sounds when
 
 XIII. Rules and Gameplay A. Setup, B. Gameplay, C. Scoring - Jeremy
 
-XIV. Program Structure - Mark
+XIV. Program Structure - Written in python. Screens organized in a stack. Each Screen is a Layer and is managed by a layer manager.  Each Screen calls the creation of classes that are placed onto that screen. Each class contains: HandleEvent, Update, and Render functions to be called by the screen. Every different entity will have its own file and class.
 
-XV. Technical Specs: Physics, Rendering System, Lighting Models - Mark
+Template:
+import layermanager
+class Template(layermanager.Layer):
+    def __init__(self,screen):
+        layermanager.Layer.__init__(self)
+
+    def HandleEvent(self, event):
+        pass
+
+    def Update(self):
+        pass
+
+    def Render(self, screen):   
+        pass
+
+XV. Technical Specs: Physics, Rendering System, Lighting Models - Game will be 2D using Pygame.
 
 XVI. Implementation - Evan
 
