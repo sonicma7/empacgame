@@ -1,0 +1,37 @@
+G.l.a.s.s. B.r.e.a.k.e.r.
+
+Screen shot mockup – ALL Artist & Screenshot of Prototype
+
+I. Artist Statement/Philosophy/The WHY Factor (why create this game? why would someone want to play it?) - Mark
+
+II. Predecessor or previous games/ distinctive factors in this genre - Ryan
+
+III. Target Audience –The target audience is RPI students. Specifically any who have made the observation that EMPAC’s windows would be a target for rock throwers or just want to vent their frustration about the perceived waste of money spent on EMPAC.
+
+IV. Introduction & Story - Jeremy
+
+V. Immediate and long term projected socio/cultural project impact - Mark
+
+VI. Delivery System & Requirements - Jeremy
+
+VII. Interface - Ryan
+
+VIII. User Interaction - Jeremy
+
+IX. The World Layout - Evan
+
+X. Level Design - Evan
+
+XI. Visualization- characters, flow charts - Ryan
+
+XII. Music/ Sound Design – The main sounds are suction cup popping sounds when the player moves the character, glass breaking and tinkling sounds when a window is broken, whooshing sounds when a projectile is thrown and police sirens. The game could also have a generic ambient music loop in the background.
+
+XIII. Rules and Gameplay A. Setup, B. Gameplay, C. Scoring - Jeremy
+
+XIV. Program Structure - Mark
+
+XV. Technical Specs: Physics, Rendering System, Lighting Models - Mark
+
+XVI. Implementation - Evan
+
+XVII. Production Timeframe - Ryan
