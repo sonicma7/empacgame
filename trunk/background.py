@@ -71,6 +71,11 @@ class Background(layermanager.Layer):
             j = i.Update()
             if j == True:
                 self.balloons.remove(i)
+         
+        for i in self.balloons:
+            if pygame.sprite.collide_rect(self.player, i):
+                self.balloons.remove(i)
+        
 
     def Render(self, screen):          
         screen.blit(self.background,self.backgroundRect)
