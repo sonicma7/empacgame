@@ -19,8 +19,10 @@ class Enemy():
             self.rect = self.image.get_rect()
         
         self.rooftop = [0]
+        self.groundHeight = 625.0
         self.positionOffset = [53]
         self.speed = 3.0
+        self.roofspeed = 3.0
         self.background = background
         self.height = 10
         self.timer = pygame.time.get_ticks()
@@ -29,11 +31,19 @@ class Enemy():
         
         
     def HandleEvent(self, event):
-        if event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN:
-            if self.speed > 1:
-                self.speed -= 1
-        elif event.type == pygame.KEYDOWN and event.key == pygame.K_UP:
-            self.speed += 1
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_MINUS:
+            if self.speed > 1.0:
+                self.speed -= 1.0
+            self.attackspeed += 10.0
+            self.roofspeed += 1.0
+            
+        elif event.type == pygame.KEYDOWN and event.key == pygame.K_EQUALS:
+            self.speed += 1.0
+            if self.attackspeed > 10.0:
+                self.attackspeed -= 10.0
+            if self.roofspeed > 1.0:
+                self.roofspeed -= 1.0
+
     
     def Update(self):
         if self.type == 0:
@@ -41,33 +51,37 @@ class Enemy():
             
             if self.rect.centerx < pos:
                 if pos - self.rect.centerx < self.speed:
-                    self.rect.centery += (pos - self.rect.centerx)/3.0
+                    self.groundHeight += (pos - self.rect.centerx)/3.0
+                    self.rect.centery = self.groundHeight
                     self.rect.centerx += pos - self.rect.centerx
                 else:
                     self.rect.centerx += self.speed
-                    self.rect.centery += self.speed/3.0
+                    self.groundHeight += self.speed/3.0
+                    self.rect.centery = self.groundHeight
             elif self.rect.centerx > pos:
                 if self.rect.centerx - pos < self.speed:
-                    self.rect.centery -= (self.rect.centerx - pos)/3.0
+                    self.groundHeight -= (self.rect.centerx - pos)/3.0
+                    self.rect.centery = self.groundHeight
                     self.rect.centerx -= self.rect.centerx - pos
                 else:
                     self.rect.centerx -= self.speed
-                    self.rect.centery -= self.speed/3.0
+                    self.groundHeight -= self.speed/3.0
+                    self.rect.centery = self.groundHeight
             else:
-                if pygame.time.get_ticks() - self.timer > self.attackspeed * 100:
+                if pygame.time.get_ticks() - self.timer > self.attackspeed * 100.0:
                     self.timer = pygame.time.get_ticks()
                     self.background.balloons.append(balloon.Balloon(self))
                 
         
         elif self.type == 1:
-            if pygame.time.get_ticks() - self.timer > self.speed * 100:
+            if pygame.time.get_ticks() - self.timer > self.roofspeed * 100.0:
                 self.timer = pygame.time.get_ticks()
                 if self.rooftop[0] < self.background.player.window[0]:
                     self.rooftop[0] += 1
                 elif self.rooftop[0] > self.background.player.window[0]:
                     self.rooftop[0] -= 1
                 else:
-                    if pygame.time.get_ticks() - self.attacktimer > self.attackspeed * 100:
+                    if pygame.time.get_ticks() - self.attacktimer > self.attackspeed * 100.0:
                         self.attacktimer = pygame.time.get_ticks()
                         self.background.balloons.append(balloon.Balloon(self))
             
