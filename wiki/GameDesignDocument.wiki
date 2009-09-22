@@ -19,7 +19,7 @@ VI. Delivery System & Requirements - The game requires the Pygame ending (1.8.1 
 
 VII. Interface - Ryan
 
-VIII. User Interaction - The player moves around using the W,A,S,D keys to move up, left, down, and right accordingly. Up, down, left and right attack the corresponding windows. Using the space bar, and then W, A, S or D, will cause the player to jump over one mirror in the corresponding direction. This is useful because players cannot move onto broken windows, but they are able to jump over broken windows to other intact windows.
+VIII. User Interaction - The player moves around using the W, A, S, D keys to move up, left, down, and right accordingly. Up, down, left and right attack the corresponding windows. Using the space bar, and then W, A, S or D, will cause the player to jump over one mirror in the corresponding direction. This is useful because players cannot move onto broken windows, but they are able to jump over broken windows to other intact windows.
 
 IX. The World Layout - Evan
 
