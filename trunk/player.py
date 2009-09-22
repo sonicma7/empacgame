@@ -135,4 +135,6 @@ class Player():
             
     
     def Render(self, screen):   
-        screen.blit(self.player,(self.positionOffset[0]+(127*self.window[0]),self.positionOffset[1]+(79*self.window[1])))
+        self.playerRect = screen.blit(self.player,(self.positionOffset[0]+(127*self.window[0]),self.positionOffset[1]+(79*self.window[1])))
+        
+
