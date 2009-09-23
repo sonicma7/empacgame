@@ -33,7 +33,7 @@ XIII. Rules and Gameplay A. Setup, B. Gameplay, C. Scoring - The player’s star
 
 The goal of the game is to move around from window to window while avoiding public safety as they try to stop the player. The more windows the player breaks the higher their score will be. If a player gets trapped or public safety hits them enough times, the game ends. 
 
-The players score is the cost to replace a window * percent damage done.
+The players score is the cost to replace a window x percent damage done.
 
 
 XIV. Program Structure - Written in python. Screens organized in a stack. Each Screen is a Layer and is managed by a layer manager.  Each Screen calls the creation of classes that are placed onto that screen. Each class contains: HandleEvent, Update, and Render functions to be called by the screen. Every different entity will have its own file and class.
