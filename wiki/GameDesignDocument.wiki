@@ -55,6 +55,6 @@ class Template(layermanager.Layer):
 
 XV. Technical Specs: Physics, Rendering System, Lighting Models - Game will be 2D using Pygame.
 
-XVI. Implementation - Evan
+XVI. Implementation - This game has a simple implementation: 2D world, 4-way movement, and simple AI.
 
 XVII. Production Timeframe - Ryan
