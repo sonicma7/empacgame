@@ -57,3 +57,13 @@ class Template(layermanager.Layer):
 *XVI. Implementation* - This game has a simple implementation: 2D world, 4-way movement, and simple AI.
 
 *XVII. Production Timeframe* - Ryan
+
+*Contribution*
+
+Jeremy - temporary art, game framework, player control and movement, background
+Mark - enemy AI, temporary art
+James - Background and window design
+Ryan - player character animations
+Evan - balloon and enemy animations
+
+All members contributed to the Game Design Document
