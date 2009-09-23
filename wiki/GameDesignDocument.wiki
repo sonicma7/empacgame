@@ -27,7 +27,7 @@ Long term impact may be much more devastating to the actual EMPAC building.  Gam
 
 *IX. The World Layout* - The world that the user sees is a simple landscape. The background shows EMPAC from the side. This is all the player can go to.  Different levels incorporate the background to different goals but the location remains the same. The player can however infer that the larger world outside of the level is there. The police/public safety officers march onto the screen from somewhere, presumably from campus or a central office.
 
-*X. Level Design* - The level design is extremely simple. The main space that the player can travel on is the glass face of EMPAC. They can only travel on the window pane spaces. The police/public safety officers travel only on the ground and on the roof of the building. The interesting part about the level design is that the building is built on a slope, so the player and the ground-bound officers have to follow the slope of the ground. This makes movement more difficult for the player at that section of the level.
+*X. Level Design* - The main space that the player can travel on is the glass face of EMPAC. They can only travel on the window pane spaces. The police/public safety officers travel only on the ground and on the roof of the building. The interesting part about the level design is that the building is built on a slope, so the player and the ground-bound officers have to follow the slope of the ground. This makes movement more difficult for the player at that section of the level.
 
 *XI. Visualization - characters, flow charts* - Ryan
 
