@@ -1,7 +1,7 @@
 G.l.a.s.s. B.r.e.a.k.e.r.
 
-Jeremy Therrien
-Mark Aversa
+Jeremy Therrien 
+Mark Aversa 
 Evan Slaughter
 Ryan Michaels
 James deWitt
