@@ -75,6 +75,9 @@ class Background(layermanager.Layer):
         for i in self.balloons:
             if pygame.sprite.collide_rect(self.player, i):
                 self.balloons.remove(i)
+                self.player.life -= 1.0
+                if self.player.life == 0.0:
+                    self.gameRunning = False
         
 
     def Render(self, screen):          

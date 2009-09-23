@@ -21,6 +21,7 @@ class Player(pygame.sprite.Sprite):
         self.jumpLeft = False
         self.jumpUp = False
         self.jumpDown = True
+        self.life = 5.0
 
     def HandleEvent(self, event):
         if event.type == KEYUP:
