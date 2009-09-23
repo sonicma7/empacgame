@@ -8,7 +8,7 @@ James deWitt
 
 *I. Artist Statement/Philosophy/The WHY Factor (why create this game? why would someone want to play it?)* - Ever feel frustrated with the new EMPAC building? Why not use the money you pay to go here on something useful? Well now you can take out your frustration on EMPAC in the game G.l.a.s.s. B.r.e.a.k.e.r. and break the windows of that annoying building.
 
-*II. Predecessor or previous games/ distinctive factors in this genre* - Ryan
+*II. Predecessor or previous games/ distinctive factors in this genre* - A very popular game that is similar in gameplay is Rampage. Rampage is a 1980's aracde game in which the player controls various gigantic monsters and smashes, rips apart, and reduces buldings to rubble. Distinctive factors include fast paced, time-trial style levels where the character is pressured to complete by various enemies. Also, the game has a bit of strategy, where if they make wrong moves and smash the wrong windows, they can essential lock themselves in a corner with no escape.
 
 *III. Target Audience* – The target audience is RPI students. Specifically any who have made the observation that EMPAC’s windows would be a target for rock throwers or just want to vent their frustration about the perceived waste of money spent on EMPAC.
 
@@ -21,7 +21,7 @@ Long term impact may be much more devastating to the actual EMPAC building.  Gam
 
 *VI. Delivery System & Requirements* - The game requires the Pygame ending (1.8.1 Release) and Python (version 2.5-2.6).
 
-*VII. Interface* - Ryan
+*VII. Interface* - The interface of G.L.A.S.S.B.R.E.A.K.E.R. is very minimal. There is a HUD which displays the amount of money you are costing the school in window repair and replacement. A weapon bar is placed in the upper left hand corner, which displays which weapon you have equiped and also if and what other weapons you are carrying. Your health is indicated by ring around your weapon bar.
 
 *VIII. User Interaction* - The player moves around using the W, A, S, D keys to move up, left, down, and right accordingly. Up, down, left and right attack the corresponding windows. Using the space bar, and then W, A, S or D, will cause the player to jump over one mirror in the corresponding direction. This is useful because players cannot move onto broken windows, but they are able to jump over broken windows to other intact windows.
 
@@ -60,7 +60,7 @@ class Template(layermanager.Layer):
 
 *XVI. Implementation* - This game has a simple implementation: 2D world, 4-way movement, and simple AI.
 
-*XVII. Production Timeframe* - Ryan
+*XVII. Production Timeframe* - The timeframe to complete this game would be between 1 and 2 months. Basic prototype in 2 weeks, cleaned-up Beta in 1 month, then anywhere between 1-2 weeks of play-testing and balancing. Basic art assests would be completed by the 2-week mark, with full animations completed within 4-6 week mark.
 
 *Contribution*
 
