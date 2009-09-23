@@ -21,7 +21,7 @@ Long term impact may be much more devastating to the actual EMPAC building.  Gam
 
 *VI. Delivery System & Requirements* - The game requires the Pygame ending (1.8.1 Release) and Python (version 2.5-2.6).
 
-*VII. Interface* - The interface of G.L.A.S.S.B.R.E.A.K.E.R. is very minimal. There is a HUD which displays the amount of money you are costing the school in window repair and replacement. A weapon bar is placed in the upper left hand corner, which displays which weapon you have equiped and also if and what other weapons you are carrying. Your health is indicated by ring around your weapon bar.
+*VII. Interface* - The interface of G.l.a.s.s. B.r.e.a.k.e.r. is very minimal. There is a HUD which displays the amount of money you are costing the school in window repair and replacement. A weapon bar is placed in the upper left hand corner, which displays which weapon you have equiped and also if and what other weapons you are carrying. Your health is indicated by ring around your weapon bar.
 
 *VIII. User Interaction* - The player moves around using the W, A, S, D keys to move up, left, down, and right accordingly. Up, down, left and right attack the corresponding windows. Using the space bar, and then W, A, S or D, will cause the player to jump over one mirror in the corresponding direction. This is useful because players cannot move onto broken windows, but they are able to jump over broken windows to other intact windows.
 
