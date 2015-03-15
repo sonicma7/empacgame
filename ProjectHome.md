@@ -1,0 +1,1 @@
+You play as a someone trying to break the windows of EMPAC while RPI Public Safety tries to stop you
